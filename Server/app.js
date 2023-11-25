@@ -38,10 +38,6 @@ app.use(limiter);
 // Database Lib Import
 const mongoose = require('mongoose'); 
 
-// MongoDB Connection
-/* Atlas URI
-/ const URI = `mongodb+srv://${process.env.MONGODB_USER_NAME}:${process.env.MONGODB_USER_PASSWORD}@cluster0.fsp0qs4.mongodb.net/Your-Database-Name?retryWrites=true&w=majority`;*/
-
 const DATABASE = process.env.DATABASE; 
 mongoose
   .connect(DATABASE, {
@@ -53,7 +49,7 @@ mongoose
   .catch((err) => {
     console.error(err);
   });
-
+ 
 
 // Routing Implement
 app.use("/api/v1", router)
