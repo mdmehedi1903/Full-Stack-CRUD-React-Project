@@ -106,7 +106,9 @@ const StudentForm = () => {
   return (
     <div className='container mt-3'>
       <div className='row'>
-        <h3>Insert Student Data</h3>
+        {
+          updateId===null?(<h3>Insert Student Data</h3>):(<h3>Edit Student Data</h3>)
+        }
         <div className='col-md-4 mt-3'>
           <input
             value={formValue.firstName}
@@ -209,8 +211,7 @@ const StudentForm = () => {
 
 
         <div className='col-md-12 mt-3'>
-          <label className='form-label'>Save Change</label><br/>
-          <button onClick={SaveForm} className='btn btn-primary'>Submit</button>
+          <button onClick={SaveForm} className='btn btn-success'>Submit</button>
           <br/>
           <br/>
         </div>

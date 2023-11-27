@@ -30,18 +30,21 @@ const StudentList = () => {
         // DeleteAlert(id)
     }
 
-    if(data.length===0){
-        // return(
-        //     <Loader/>
-        // );
-        navigate('/save')
+    if (data.length === 0) {
+        return (
+            <>
+                <Loader />
+                {navigate('/save')}
+            </>
+        );
     }
+    
     else{     
         return (
             <Container><br/>
-            <h3>Total Student: {data.length} </h3><br/>
+            <h3 className='bg-success text-center text-white p-3'>Total Student: {data.length} </h3><br/>
                 <Table striped bordered hover responsive>
-                    <thead className='table-head'>
+                    <thead>
                     <tr>
                         <th>Name</th>
                         <th>Gender</th>
