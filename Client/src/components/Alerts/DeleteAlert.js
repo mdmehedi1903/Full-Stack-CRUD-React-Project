@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2';
 import {toast} from 'react-hot-toast'
 import { DeleteRequest } from '../../apiRequest/apiRequest';
+import { effectChange } from './setChange';
 
 export function DeleteAlert(id){
     Swal.fire({
@@ -21,7 +22,9 @@ export function DeleteAlert(id){
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success"
-              });
+              }); 
+              effectChange();
+              
             }else{
               Swal.fire({
                 title: "Failed!",

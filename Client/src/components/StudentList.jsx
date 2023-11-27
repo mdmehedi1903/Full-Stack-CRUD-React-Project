@@ -4,10 +4,13 @@ import { DeleteRequest, ListStudent } from '../apiRequest/apiRequest';
 import Loader from './Loader';
 import {Toaster, toast} from 'react-hot-toast'
 import { DeleteAlert } from './Alerts/DeleteAlert';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { effectChange } from './Alerts/setChange';
 const StudentList = () => { 
+    const navigate = useNavigate()
     const [data, setData] = useState([]);
     const [change, setChange] = useState();
+
 
     useEffect(()=>{
         (async ()=>{
@@ -15,14 +18,7 @@ const StudentList = () => {
             setData(res);
         })()
     },[change])
-
-        // const alertDelete = async(id) => {
-
-        //     DeleteAlert(id)
-        // }
-
-        
-
+      
     const onDelete = async(id) => {
         let res = await DeleteRequest(id);
         if(res){
@@ -31,16 +27,19 @@ const StudentList = () => {
         }else{
             toast.error("Delete Failed!")
         }
+        // DeleteAlert(id)
     }
 
     if(data.length===0){
-        return(
-            <Loader/>
-        );
+        // return(
+        //     <Loader/>
+        // );
+        navigate('/save')
     }
     else{     
         return (
             <Container><br/>
+            <h3>Total Student: {data.length} </h3><br/>
                 <Table striped bordered hover responsive>
                     <thead className='table-head'>
                     <tr>

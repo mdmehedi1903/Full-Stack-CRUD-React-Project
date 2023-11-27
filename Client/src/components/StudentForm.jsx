@@ -104,9 +104,10 @@ const StudentForm = () => {
   };
 
   return (
-    <div className='container mt-5'>
+    <div className='container mt-3'>
       <div className='row'>
-        <div className='col-md-4 mt-5'>
+        <h3>Insert Student Data</h3>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.firstName}
             onChange={(e) => inputOnChange('firstName', e.target.value)}
@@ -116,7 +117,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.lastName}
             onChange={(e) => inputOnChange('lastName', e.target.value)}
@@ -126,7 +127,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.gender}
             onChange={(e) => inputOnChange('gender', e.target.value)}
@@ -136,7 +137,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.dateOfBirth}
             onChange={(e) => inputOnChange('dateOfBirth', e.target.value)}
@@ -146,7 +147,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.nationality}
             onChange={(e) => inputOnChange('nationality', e.target.value)}
@@ -156,7 +157,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.address}
             onChange={(e) => inputOnChange('address', e.target.value)}
@@ -166,7 +167,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.email}
             onChange={(e) => inputOnChange('email', e.target.value)}
@@ -176,7 +177,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.phone}
             onChange={(e) => inputOnChange('phone', e.target.value)}
@@ -186,7 +187,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.admissionDate}
             onChange={(e) => inputOnChange('admissionDate', e.target.value)}
@@ -196,7 +197,7 @@ const StudentForm = () => {
           />
         </div>
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-4 mt-3'>
           <input
             value={formValue.courses}
             onChange={(e) => inputOnChange('courses', e.target.value)}
@@ -207,9 +208,9 @@ const StudentForm = () => {
         </div>
 
 
-        <div className='col-md-4 mt-5'>
+        <div className='col-md-12 mt-3'>
           <label className='form-label'>Save Change</label><br/>
-          <button onClick={SaveForm} className='btn btn-primary w-100'>Submit</button>
+          <button onClick={SaveForm} className='btn btn-primary'>Submit</button>
           <br/>
           <br/>
         </div>
