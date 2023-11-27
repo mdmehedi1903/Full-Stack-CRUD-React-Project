@@ -1,0 +1,9 @@
+.nav-link:hover,
+.nav-link.active {
+  color: yellow !important;
+}
+
+
+.table-head {
+  background: green;
+}

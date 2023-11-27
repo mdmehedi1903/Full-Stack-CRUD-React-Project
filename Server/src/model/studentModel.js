@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
   dateOfBirth: { type: String, required: true },
   nationality: { type: String, required: true },
   address: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: false},
   phone: { type: String, required: true },
   admissionDate: { type: String, required: true },
   courses: { type: String, required: true },
