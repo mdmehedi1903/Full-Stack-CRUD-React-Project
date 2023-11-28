@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-import { Table, Container } from 'react-bootstrap';
+import { Table, Container, Spinner, Card, Button } from 'react-bootstrap';
 import { DeleteRequest, ListStudent } from '../apiRequest/apiRequest';
 import Loader from './Loader';
 import {Toaster, toast} from 'react-hot-toast'
@@ -11,12 +11,13 @@ const StudentList = () => {
     const [change, setChange] = useState(0);
 
 
-    useEffect(()=>{
+
+    useEffect(()=>{ 
         (async ()=>{
             let res = await ListStudent();
             setData(res);
         })()
-    },[change, data])
+    },[change])
       
     const onDelete = async(id) => {
         // let res = await DeleteRequest(id);
@@ -63,12 +64,111 @@ const StudentList = () => {
 
     }
 
-    
+
     if (data.length === 0) {
         return (
             <>
-                <Loader />
-                {navigate('/save')}
+                {/* <Loader /> */}
+                <Container><br/>
+                <h3 className='bg-success text-center text-white p-3'> Loading &nbsp;
+
+
+                <div class="spinner-grow text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+
+                </h3>
+                    <br/>
+                    <Table striped bordered hover responsive>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>DOB</th>
+                        <th>Nationality</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Admission Date</th>
+                        <th>Course</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-11"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-9"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-10"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-6"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-8"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-11"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-9"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-10"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-6"></span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="10">
+                                <p class="card-text placeholder-glow">
+                                    <span class="placeholder col-8"></span>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    </Table>
+                </Container>
             </>
         );
     }

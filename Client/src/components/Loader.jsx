@@ -9,7 +9,7 @@ const Loader = () => {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black overlay
+        backgroundColor: "rgba(1, 162, 255)", // Semi-transparent black overlay
         position: 'fixed',
         top: 0,
         left: 0,

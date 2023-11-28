@@ -168,7 +168,7 @@ const StudentForm = () => {
             onChange={(e) => inputOnChange('address', e.target.value)}
             type='text'
             className='form-control'
-            placeholder='Nationality'
+            placeholder='Address'
           />
         </div>
 
