@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import { Table, Container } from 'react-bootstrap';
 import { DeleteRequest, ListStudent } from '../apiRequest/apiRequest';
 import Loader from './Loader';
 import {Toaster, toast} from 'react-hot-toast'
-import { DeleteAlert } from './Alerts/DeleteAlert';
 import { Link, useNavigate } from 'react-router-dom';
-import { effectChange } from './Alerts/setChange';
 const StudentList = () => { 
     const navigate = useNavigate()
     const [data, setData] = useState([]);
-    const [change, setChange] = useState();
+    const [change, setChange] = useState(0);
 
 
     useEffect(()=>{
@@ -20,16 +19,51 @@ const StudentList = () => {
     },[change])
       
     const onDelete = async(id) => {
-        let res = await DeleteRequest(id);
-        if(res){
-            toast.success("Student Deleted!")
-            setChange(new Date().getTime())
-        }else{
-            toast.error("Delete Failed!")
-        }
-        // DeleteAlert(id)
+        // let res = await DeleteRequest(id);
+        // if(res){
+        //     toast.success("Student Deleted!")
+        //     setChange(new Date().getTime())
+        // }else{
+        //     toast.error("Delete Failed!")
+        // }
+
+
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then(async(result) => {
+            if (result.isConfirmed) {
+    
+     
+                let res = await DeleteRequest(id);
+                if(res){
+                  Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                  }); 
+                  setChange(new Date().getTime())
+                  
+                }else{
+                  Swal.fire({
+                    title: "Failed!",
+                    text: "Your file delete request is failed!",
+                    icon: "error"
+                  });
+                }
+            }
+          });
+
+
     }
 
+    
     if (data.length === 0) {
         return (
             <>
