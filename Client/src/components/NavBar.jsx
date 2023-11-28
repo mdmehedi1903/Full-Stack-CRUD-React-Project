@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand>CRUD-STUDENT</Navbar.Brand>
+        <Navbar.Brand><NavLink className="crud-student" to="/">CRUD-STUDENT</NavLink></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

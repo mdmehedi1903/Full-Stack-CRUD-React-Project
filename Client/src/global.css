@@ -7,3 +7,10 @@
 .table-head {
   background: green !important;
 }
+
+
+.crud-student {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}

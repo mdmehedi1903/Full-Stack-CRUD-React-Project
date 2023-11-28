@@ -86,12 +86,15 @@ const StudentForm = () => {
         if (res) {
           toast.success("Create Request Completed!");
           // navigate('/');
+          setTimeout(()=>{
+            navigate('/');
+          }, 1500)
         } else {
           toast.error("Create Request Fail!");
         }
       }else{
         let res = await UpdateStudent(formValue, updateId);
-        if (res) {
+        if (res) { 
           toast.success("Update Request Completed!");
           // navigate('/');
         } else {

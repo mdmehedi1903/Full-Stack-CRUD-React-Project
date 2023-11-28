@@ -16,7 +16,7 @@ const StudentList = () => {
             let res = await ListStudent();
             setData(res);
         })()
-    },[change])
+    },[change, data])
       
     const onDelete = async(id) => {
         // let res = await DeleteRequest(id);
